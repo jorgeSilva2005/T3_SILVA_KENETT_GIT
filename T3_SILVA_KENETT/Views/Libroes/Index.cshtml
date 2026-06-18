@@ -1,0 +1,122 @@
+﻿@model IEnumerable<T3_SILVA_KENETT.Models.Libro>
+
+@{
+    ViewData["Title"] = "Gestión de Libros";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">📚 Gestión de Libros</h2>
+
+            <a asp-action="Create" class="btn btn-light fw-bold">
+                ➕ Nuevo Libro
+            </a>
+        </div>
+
+        <div class="card-body">
+
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+                    @TempData["Mensaje"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <table class="table table-hover table-bordered align-middle">
+
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Tema</th>
+                        <th>Editorial</th>
+                        <th>Año</th>
+                        <th>Páginas</th>
+                        <th>Categoría</th>
+                        <th>Material</th>
+                        <th>Copias</th>
+                        <th width="240">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="10" class="text-center text-muted">
+                                No existen libros registrados.
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Titulo</td>
+
+                                <td>@item.Autor</td>
+
+                                <td>@item.Tema</td>
+
+                                <td>@item.Editorial</td>
+
+                                <td>@item.AnioPublicacion</td>
+
+                                <td>@item.Paginas</td>
+
+                                <td>
+                                    <span class="badge bg-info text-dark">
+                                        @item.Categoria
+                                    </span>
+                                </td>
+
+                                <td>@item.Material</td>
+
+                                <td class="text-center">
+                                    <span class="badge bg-secondary">
+                                        @item.Copias
+                                    </span>
+                                </td>
+
+                                <td class="text-center">
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-warning btn-sm">
+                                        ✏️ Editar
+                                    </a>
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-info btn-sm text-white">
+                                        👁️ Detalles
+                                    </a>
+
+                                    <a asp-action="Delete"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-danger btn-sm">
+                                        🗑️ Eliminar
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

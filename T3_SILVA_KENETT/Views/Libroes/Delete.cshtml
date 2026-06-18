@@ -1,0 +1,100 @@
+﻿@model T3_SILVA_KENETT.Models.Libro
+
+@{
+    ViewData["Title"] = "Eliminar Libro";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-danger text-white">
+            <h2 class="mb-0">🗑️ Eliminar Libro</h2>
+            <p class="mb-0">
+                Confirma la eliminación del siguiente registro.
+            </p>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-warning">
+                <strong>⚠️ Advertencia:</strong>
+                Esta acción eliminará permanentemente el libro de la base de datos.
+            </div>
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th width="30%">📚 Título</th>
+                    <td>@Model.Titulo</td>
+                </tr>
+
+                <tr>
+                    <th>✍️ Autor</th>
+                    <td>@Model.Autor</td>
+                </tr>
+
+                <tr>
+                    <th>🏷️ Tema</th>
+                    <td>@Model.Tema</td>
+                </tr>
+
+                <tr>
+                    <th>🏢 Editorial</th>
+                    <td>@Model.Editorial</td>
+                </tr>
+
+                <tr>
+                    <th>📅 Año de Publicación</th>
+                    <td>@Model.AnioPublicacion</td>
+                </tr>
+
+                <tr>
+                    <th>📄 Páginas</th>
+                    <td>@Model.Paginas</td>
+                </tr>
+
+                <tr>
+                    <th>📂 Categoría</th>
+                    <td>
+                        <span class="badge bg-primary">
+                            @Model.Categoria
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>📕 Material</th>
+                    <td>@Model.Material</td>
+                </tr>
+
+                <tr>
+                    <th>📦 Copias</th>
+                    <td>
+                        <span class="badge bg-secondary">
+                            @Model.Copias
+                        </span>
+                    </td>
+                </tr>
+
+            </table>
+
+            <form asp-action="Delete" class="mt-4">
+
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">
+                    🗑️ Confirmar Eliminación
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    ← Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

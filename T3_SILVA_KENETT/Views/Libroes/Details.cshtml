@@ -1,0 +1,92 @@
+﻿@model T3_SILVA_KENETT.Models.Libro
+
+@{
+    ViewData["Title"] = "Detalles del Libro";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-info text-white">
+            <h2 class="mb-0">📖 Detalles del Libro</h2>
+            <p class="mb-0">Información completa del libro seleccionado</p>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>📚 Título:</strong><br />
+                    @Model.Titulo
+                </div>
+
+                <div class="col-md-6">
+                    <strong>✍️ Autor:</strong><br />
+                    @Model.Autor
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>🏷️ Tema:</strong><br />
+                    @Model.Tema
+                </div>
+
+                <div class="col-md-6">
+                    <strong>🏢 Editorial:</strong><br />
+                    @Model.Editorial
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <strong>📅 Año de Publicación:</strong><br />
+                    @Model.AnioPublicacion
+                </div>
+
+                <div class="col-md-4">
+                    <strong>📄 Páginas:</strong><br />
+                    @Model.Paginas
+                </div>
+
+                <div class="col-md-4">
+                    <strong>📦 Copias:</strong><br />
+                    <span class="badge bg-secondary fs-6">
+                        @Model.Copias
+                    </span>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <strong>📂 Categoría:</strong><br />
+                    <span class="badge bg-primary fs-6">
+                        @Model.Categoria
+                    </span>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>📕 Material:</strong><br />
+                    @Model.Material
+                </div>
+            </div>
+
+            <hr />
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.Id"
+               class="btn btn-warning">
+                ✏️ Editar
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                ← Volver al listado
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
