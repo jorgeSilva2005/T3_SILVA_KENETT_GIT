@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale="1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - T3_SILVA_KENETT</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -13,65 +13,46 @@
 <body>
 
     <header>
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-
             <div class="container-fluid">
 
-                <a class="navbar-brand fw-bold"
-                   asp-controller="Home"
-                   asp-action="Index">
+                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
                     📚 T3_SILVA_KENETT
                 </a>
 
-                <button class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarPrincipal">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse"
-                     id="navbarPrincipal">
-
+                <div class="collapse navbar-collapse" id="navbarPrincipal">
                     <ul class="navbar-nav me-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link text-white"
-                               asp-controller="Home"
-                               asp-action="Index">
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">
                                 🏠 Inicio
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white"
-                               asp-controller="Libroes"
-                               asp-action="Index">
-                                📖 Gestión de Libros
+                            <a class="nav-link text-white" asp-controller="Libroes" asp-action="Index">
+                                📚 Biblioteca Virtual
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white"
-                               asp-controller="Libroes"
-                               asp-action="Create">
+                            <a class="nav-link text-white" asp-controller="Libroes" asp-action="Create">
                                 ➕ Registrar Libro
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white"
-                               asp-controller="Informacion"
-                               asp-action="Arquitectura">
+                            <a class="nav-link text-white" asp-controller="Informacion" asp-action="Arquitectura">
                                 🏗️ Arquitectura de Software
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white"
-                               asp-controller="Informacion"
-                               asp-action="Diseno">
+                            <a class="nav-link text-white" asp-controller="Informacion" asp-action="Diseno">
                                 🎨 Diseño de Software
                             </a>
                         </li>
@@ -79,29 +60,22 @@
                     </ul>
 
                     <partial name="_LoginPartial" />
-
                 </div>
 
             </div>
-
         </nav>
-
     </header>
 
     <div class="container mt-4">
-
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-
     </div>
 
     <footer class="border-top text-center text-muted py-3 mt-5">
-
         <div class="container">
             © 2026 - T3_SILVA_KENETT | Sistema de Gestión de Libros ASP.NET MVC
         </div>
-
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
